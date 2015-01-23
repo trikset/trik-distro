@@ -134,7 +134,7 @@ else
     # Specify the root directory for your OpenEmbedded development
     #--------------------------------------------------------------------------
     OE_BUILD_DIR=${OE_BASE}
-    OE_BUILD_TMPDIR="${OE_BUILD_DIR}/build/tmp-${DISTRO_DIRNAME}"
+    OE_BUILD_TMPDIR="${OE_BUILD_DIR}/build/tmp"
     OE_SOURCE_DIR=${OE_BASE}/sources
     OE_LAYERS_TXT="${OE_SOURCE_DIR}/layers.txt"
 
