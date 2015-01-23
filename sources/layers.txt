@@ -1,7 +1,7 @@
-bitbake,git://github.com/openembedded/bitbake.git,master,afa2431c21b8271b05dc4cca4265f98d9f338007
-openembedded-core,git://github.com/Angstrom-distribution/oe-core.git,master,b4cd268cf7506a521d7800112cb775bd49e1ef09
-meta-openembedded,git://github.com/Angstrom-distribution/meta-oe.git,master,e988ed754ba2d18d8f08903d0a034b64f169bd4a
+bitbake,git://github.com/trikset/bitbake.git,trikset-master,HEAD
+openembedded-core,git://github.com/trikset/openembedded-core.git,trikset-master,HEAD
+meta-openembedded,git://github.com/trikset/meta-openembedded.git,trikset-master,HEAD
 meta-java,git://github.com/woglinde/meta-java.git,master,HEAD
 meta-mono,git://git.yoctoproject.org/meta-mono.git,master,HEAD
 meta-ros,git://github.com/bmwcarit/meta-ros.git,master,f7d260c7388135604c7aa7a8da1472b59ebdcda7
-meta-trik,git://github.com/trikset/meta-trik.git,master,1dce5d7024669f7df1c7fa4cb026adffc040e32c
+meta-trik,git://github.com/trikset/meta-trik.git,master,HEAD
