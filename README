@@ -1,3 +1,7 @@
+First of all:
+
+	http://www.openembedded.org/wiki/Getting_started
+
 To configure the scripts and download the build metadata, do:
 
 	$ MACHINE=trikboard ./oebb.sh config trikboard
@@ -20,5 +24,13 @@ The oebb.sh script tries hard to keep your local changes while at the same time 
 
 	* it will reset the origin URI based on layers.txt, so update layers.txt when changing a repo
 	* it will do a 'git reset --hard <ref>' on locked down repos, so please create a new branch for your changes
+
+if you want to build faster, you should change options in conf/local.conf this lines–:
+
+       PARALLEL_MAKE     = "-j3"
+       BB_NUMBER_THREADS = "3"
+
+This option depends on you CPU host machine. Recommendation is ${NUM_CORES}+1.
+
 -------
 This scripts based on Angstom setup-scripts
