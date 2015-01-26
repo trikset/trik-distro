@@ -198,7 +198,7 @@ else
     #--------------------------------------------------------------------------
     if [ "$(readlink /bin/sh)" = "dash" ] ; then
 	echo "/bin/sh is a symlink to dash, please point it to bash instead"
-        exit 1
+        #exit 1
     fi
 
     echo "There now is a sourceable script in ${OE_ENV_FILE} You can do '. ${OE_ENV_FILE}' and run 'bitbake something' without using $0 as wrapper"
