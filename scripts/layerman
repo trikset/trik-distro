@@ -15,7 +15,7 @@ function check_layer() {
 	if ! [ -e ${LAYERDIR} ] ; then
 		echo -e ${LAYERINFO}
 		echo "Layer checkout missing at ${LAYERDIR}, creating one"
-		git clone --single-branch  -b ${BRANCH} -o origin ${LAYERURI} ${LAYERDIR}
+		git clone -v --single-branch  -b ${BRANCH} -o origin ${LAYERURI} ${LAYERDIR}
 		cd ${LAYERDIR}
 
 		git reset --hard ${REV}
