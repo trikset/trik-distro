@@ -4,33 +4,47 @@ First of all:
 
 To configure the scripts and download the build metadata, do:
 
-	$ MACHINE=trikboard ./oebb.sh config trikboard
+	$ ./oebb.sh config trikboard
 
-You can change the 'trikboard' in the commandline above into the machine you are targeting.
+Now all config files present to start build.
+Main config is in  ./conf directory. For example, to build faster, change options in conf/local.conf:
 
-To start a build of the kernel, source the environment file and do:
+       PARALLEL_MAKE     = "-j5"
+       BB_NUMBER_THREADS = "5"
 
-	$ . ./build-environment-trik
-	$ MACHINE=trikboard bitbake virtual/kernel
+The number in this option mainly depends on number of available CPU cores on host (build) machine. We recommend ${NUM_CORES}+1.
 
-For an example workflow for dealing with kernels please read http://www.slimlogic.co.uk/2011/05/openembeddedangstrom-kernel-workflow/
+Set environment variables:
 
-To update the metadata, do:
+	$ source ./build-environment-trik
 
+Do not forget to source enviromnent config (build-environment-trik) each time before new build in fresh terminal session.
+
+Now environment is fully prepared to build any package. For example, use following command to build kernel
+
+	$ bitbake virtual/kernel
+
+To build the whole image for microSD with TRIK firmware, run this:
+
+	$ bitbake trik-base-v2
+
+The command above also builds lots of additional packages, but not all. The first build of the whole image can take 4-8 hours, be prepared.
+
+Additional useful packages can be build by following names
+
+TODO: Table of traditional packages' names mapping to reciepts' names to build.
+TODO: Add build times 
+
+
+We work hard improving TRIK firmware, stay tuned and use 
 	$ git pull
 	$ ./oebb.sh update
+to get updates
 
-The oebb.sh script tries hard to keep your local changes while at the same time keeping close to the original config. Please keep the following in mind:
+NOTE: The oebb.sh script tries hard to keep your local changes while at the same time keeping close to the original config. Please keep the following in mind:
 
 	* it will reset the origin URI based on layers.txt, so update layers.txt when changing a repo
 	* it will do a 'git reset --hard <ref>' on locked down repos, so please create a new branch for your changes
-
-if you want to build faster, you should change options in conf/local.conf this lines–:
-
-       PARALLEL_MAKE     = "-j3"
-       BB_NUMBER_THREADS = "3"
-
-This option depends on you CPU host machine. Recommendation is ${NUM_CORES}+1.
 
 -------
 This scripts based on Angstom setup-scripts
