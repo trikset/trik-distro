@@ -198,7 +198,9 @@ else
     #--------------------------------------------------------------------------
     if [ "$(readlink /bin/sh)" = "dash" ] ; then
 	echo "/bin/sh is a symlink to dash, please point it to bash instead"
-        #exit 1
+        echo "Some scripts, especially autotools/libtool can fail in dash and require bash syntax"
+        echo "For Debian/Ubuntu/Mint use 'sudo dpkg-reconfigure dash' to choose bash as default shell"
+        exit 1
     fi
 
     echo "There now is a sourceable script in ${OE_ENV_FILE} You can do '. ${OE_ENV_FILE}' and run 'bitbake something' without using $0 as wrapper"
