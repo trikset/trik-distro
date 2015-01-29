@@ -2,11 +2,17 @@ First of all:
 
 	http://www.openembedded.org/wiki/Getting_started
 
+Long story short, for Debian/Ubuntu/Mint install pre-requisites packages:
+	
+	sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
+    build-essential chrpath libsdl1.2-dev xterm
+
+
 To configure the scripts and download the build metadata, do:
 
 	$ ./oebb.sh config trikboard
 
-Now all config files present to start build.
+Now all config files and build scripts present and host is ready to start build. Rules for build are in 'sources' directory.
 Main config is in  ./conf directory. For example, to build faster, change options in conf/local.conf:
 
        PARALLEL_MAKE     = "-j5"
@@ -20,9 +26,14 @@ Set environment variables:
 
 Do not forget to source enviromnent config (build-environment-trik) each time before new build in fresh terminal session.
 
-Now environment is fully prepared to build any package. For example, use following command to build kernel
+Now environment is fully prepared to build any package. For example, use following command to build Linux kernel
 
 	$ bitbake virtual/kernel
+
+It is strongly recommended to read short cheat-sheet on bitbake: http://elinux.org/Bitbake_Cheat_Sheet
+Might be simple ui like 'goggle' is better than pure text interface 'knotty'.
+
+	$ alias bitbake='bitbake -u goggle'
 
 To build the whole image for microSD with TRIK firmware, run this:
 
@@ -34,6 +45,12 @@ Additional useful packages can be build by following names
 
 TODO: Table of traditional packages' names mapping to reciepts' names to build.
 TODO: Add build times 
+TODO: Explain commands. 'Build' is main command, but `bitbake' knows a lot. See sources/openembedded-core/meta/conf/documentation.conf for details
+TODO: bitbake core-image-ros-roscore
+
+
+
+
 
 
 We work hard improving TRIK firmware, stay tuned and use 
