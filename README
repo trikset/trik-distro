@@ -2,9 +2,9 @@ First of all:
 
 	http://www.openembedded.org/wiki/Getting_started
 
-Long story short, for Debian/Ubuntu/Mint install pre-requisites packages:
+Long story short, to install build pre-requisites, run (for Debian/Ubuntu/Mint):
 	
-	sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
+	$ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
     build-essential chrpath libsdl1.2-dev xterm
 
 
@@ -39,17 +39,17 @@ To build the whole image for microSD with TRIK firmware, run this:
 
 	$ bitbake trik-base-v2
 
+
+
+
+
 The command above also builds lots of additional packages, but not all. The first build of the whole image can take 4-8 hours, be prepared.
 
 Additional useful packages can be build by following names
 
-TODO: Table of traditional packages' names mapping to reciepts' names to build.
-TODO: Add build times 
+TODO: Table of traditional packages' names mapping to reciepts' names to build. SDK, ROS, Java, Mono&F#, Python&PiP
 TODO: Explain commands. 'Build' is main command, but `bitbake' knows a lot. See sources/openembedded-core/meta/conf/documentation.conf for details
 TODO: bitbake core-image-ros-roscore
-
-
-
 
 
 
