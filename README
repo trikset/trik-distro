@@ -5,7 +5,7 @@ First of all:
 Long story short, to install build pre-requisites, run (for Debian/Ubuntu/Mint):
 	
 	$ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
-    build-essential chrpath libsdl1.2-dev xterm
+    build-essential chrpath libsdl1.2-dev util-linux coreutils parted
 
 
 To configure the scripts and download the build metadata, do:
