@@ -37,15 +37,25 @@ Might be simple ui like 'goggle' is better than pure text interface 'knotty'.
 
 To build the whole image for microSD with TRIK firmware, run this:
 
-	$ bitbake trik-base-v2
-
-
-
-
+	$ bitbake trik-image
 
 The command above also builds lots of additional packages, but not all. The first build of the whole image can take 4-8 hours, be prepared.
+After build is complete image is ready in deploy/eglibc/images/trikboard/. Files with .trik-img extension are full microSD images.
 
-Additional useful packages can be build by following names
+To build cross-compiler SDK:
+
+	$ bitbake meta-toolchain-trik
+
+TODO: Why 'meta-'?
+
+After successful SDK build run it to install:
+
+	# bash deploy/eglibc/sdk/trik-sdk-i686-armv5te-toolchain-trik-nodistro.0.sh   
+
+NOTE: Elevated privelegies are required to install, use 'sudo', 'su', etc.
+
+
+Additional useful things can be build by following names
 
 TODO: Table of traditional packages' names mapping to reciepts' names to build. SDK, ROS, Java, Mono&F#, Python&PiP
 TODO: Explain commands. 'Build' is main command, but `bitbake' knows a lot. See sources/openembedded-core/meta/conf/documentation.conf for details
