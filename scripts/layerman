@@ -15,16 +15,10 @@ function check_layer() {
 	if ! [ -e ${LAYERDIR} ] ; then
 		echo -e ${LAYERINFO}
 		echo "Layer checkout missing at ${LAYERDIR}, creating one"
-		git clone ${LAYERURI} ${LAYERDIR}
+		git clone -v --single-branch  -b ${BRANCH} -o origin ${LAYERURI} ${LAYERDIR}
 		cd ${LAYERDIR}
 
-		if [ "${BRANCH}" != "master" ] ; then
-			git checkout origin/${BRANCH} -b ${BRANCH}
-		fi
-
-		if [ "${REV}" != "HEAD" ] ; then
-			git reset --hard ${REV}
-		fi
+		git reset --hard ${REV}
 
 		echo "Layers present in repository:"
 		find ${LAYERDIR} -name "layer.conf" | sed -e s:${LAYERDIR}:${LAYERNAME}:g -e s:/conf/layer\.conf::g

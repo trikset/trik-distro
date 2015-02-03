@@ -1,5 +1,8 @@
 bitbake.lock
-build
+build-environment-trik
+build/
+buildhistory/
+cache/
 sources/*
 deploy/
 !sources/layers.txt
