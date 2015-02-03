@@ -64,4 +64,4 @@ NOTE: The oebb.sh script tries hard to keep your local changes while at the same
 	* it will do a 'git reset --hard <ref>' on locked down repos, so please create a new branch for your changes
 
 -------
-This scripts based on Angstom setup-scripts
+This scripts are based on Angstom setup-scripts
