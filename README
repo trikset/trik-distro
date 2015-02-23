@@ -56,6 +56,7 @@ NOTE: Elevated privelegies are required to install, use 'sudo', 'su', etc.
 
 
 Additional useful things can be build by following names
+
 mono
 fsharp
 roslaunch
@@ -77,4 +78,4 @@ NOTE: The oebb.sh script tries hard to keep your local changes while at the same
 	* it will do a 'git reset --hard <ref>' on locked down repos, so please create a new branch for your changes
 
 -------
-This scripts are based on Angstom setup-scripts
+This script is based on Angstom setup-scripts
