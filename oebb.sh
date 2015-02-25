@@ -457,7 +457,7 @@ then
        "config" )
     
             shift
-            CL_MACHINE=$1
+            CL_MACHINE=${1:-trikboard}
             shift
             oe_config $*
             exit 0
