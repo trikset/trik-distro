@@ -10,7 +10,7 @@ Long story short, to install build pre-requisites, run (for Debian/Ubuntu/Mint):
 
 To configure the scripts and download the build metadata, do:
 
-	$ ./oebb.sh config trikboard
+	$ ./oebb.sh config
 
 Now all config files and build scripts present and host is ready to start build. Rules for build are in 'sources' directory.
 Main config is in  ./conf directory. For example, to build faster, change options in conf/local.conf:
