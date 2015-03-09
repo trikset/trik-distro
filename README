@@ -32,6 +32,7 @@ Now environment is fully prepared to build any package. For example, use followi
 
 It is strongly recommended to read short cheat-sheet on bitbake: http://elinux.org/Bitbake_Cheat_Sheet
 Might be simple ui like 'goggle' is better than pure text interface 'knotty'.
+NOTE: 'goggle' graphical user interface is not recommended for remote and X-less session. 
 
 	$ alias bitbake='bitbake -u goggle'
 
