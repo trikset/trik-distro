@@ -40,6 +40,10 @@ To build the whole image for microSD with TRIK firmware, run this:
 
 	$ bitbake trik-image
 
+To build the whole image for microSD with TRIK firmware with support additonal programming languages such as C#,F#(mono) and erlang, run this:
+
+	$ bitbake trik-image-langs
+
 The command above also builds lots of additional packages, but not all. The first build of the whole image can take 4-8 hours, be prepared.
 After build is complete image is ready in deploy/eglibc/images/trikboard/. Files with .trik-img extension are full microSD images.
 
