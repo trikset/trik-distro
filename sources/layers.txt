@@ -3,6 +3,6 @@ openembedded-core,git://github.com/trikset/openembedded-core.git,trikset-master,
 meta-openembedded,git://github.com/trikset/meta-openembedded.git,trikset-master,HEAD
 meta-java,git://github.com/woglinde/meta-java.git,master,HEAD
 meta-mono,git://git.yoctoproject.org/meta-mono.git,master,HEAD
-meta-ros,git://github.com/bmwcarit/meta-ros.git,master,f7d260c7388135604c7aa7a8da1472b59ebdcda7
+meta-ros,git://github.com/bmwcarit/meta-ros.git,master,HEAD
 meta-trik,git://github.com/trikset/meta-trik.git,master,HEAD
 meta-erlang,git://github.com/joaohf/meta-erlang.git,master,HEAD
