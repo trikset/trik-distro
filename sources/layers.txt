@@ -6,3 +6,4 @@ meta-mono,git://git.yoctoproject.org/meta-mono.git,master,HEAD
 meta-ros,git://github.com/bmwcarit/meta-ros.git,master,9ae3f5140efab6de58631b35fe6e5794c8ef3815
 meta-trik,git://github.com/trikset/meta-trik.git,master,HEAD
 meta-erlang,git://github.com/joaohf/meta-erlang.git,master,HEAD
+meta-qt4,git://git.yoctoproject.org/meta-qt4,master,HEAD
