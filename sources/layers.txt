@@ -1,4 +1,4 @@
-bitbake,git://github.com/openembedded/bitbake.git,1.32,HEAD
+bitbake,git://github.com/openembedded/bitbake.git,master,HEAD
 openembedded-core,git://github.com/openembedded/openembedded-core.git,master,HEAD
 meta-openembedded,git://github.com/openembedded/meta-openembedded.git,master,HEAD
 meta-java,git://git.yoctoproject.org/meta-java,master,HEAD
