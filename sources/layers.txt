@@ -5,8 +5,7 @@ meta-linaro,git://git.linaro.org/openembedded/meta-linaro.git,morty,HEAD
 meta-ti,git://git.yoctoproject.org/meta-ti,morty,HEAD
 meta-qt5,git://github.com/meta-qt5/meta-qt5.git,pyro,HEAD
 meta-mingw,git://git.yoctoproject.org/meta-mingw.git,morty,HEAD
-meta-java,git://git.yoctoproject.org/meta-java,master,HEAD
-meta-mono,git://git.yoctoproject.org/meta-mono.git,master,HEAD
+meta-java,git://git.yoctoproject.org/meta-java,morty,HEAD
+meta-mono,git://git.yoctoproject.org/meta-mono.git,morty,HEAD
 meta-ros,git://github.com/bmwcarit/meta-ros.git,master,HEAD
-meta-erlang,git://github.com/joaohf/meta-erlang.git,master,HEAD
 meta-trik,git://github.com/trikset/meta-trik.git,master,HEAD
