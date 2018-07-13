@@ -7,5 +7,5 @@ meta-qt5,git://github.com/meta-qt5/meta-qt5.git,pyro,HEAD
 meta-mingw,git://git.yoctoproject.org/meta-mingw.git,morty,HEAD
 meta-java,git://git.yoctoproject.org/meta-java,morty,HEAD
 meta-mono,git://git.yoctoproject.org/meta-mono.git,morty,HEAD
-meta-ros,git://github.com/bmwcarit/meta-ros.git,master,HEAD
+meta-ros,git://github.com/bmwcarit/meta-ros.git,master,c4314a1c13b8b63b38ffbd2f0232b945ba0663aa
 meta-trik,git://github.com/trikset/meta-trik.git,master,HEAD
