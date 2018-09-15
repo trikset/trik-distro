@@ -3,7 +3,7 @@ openembedded-core,git://github.com/openembedded/openembedded-core.git,morty,HEAD
 meta-openembedded,git://github.com/openembedded/meta-openembedded.git,morty,HEAD
 meta-linaro,git://git.linaro.org/openembedded/meta-linaro.git,morty,HEAD
 meta-ti,git://git.yoctoproject.org/meta-ti,morty,HEAD
-meta-qt5,git://github.com/meta-qt5/meta-qt5.git,pyro,HEAD
+meta-qt5,git://github.com/meta-qt5/meta-qt5.git,rocko,HEAD
 meta-mingw,git://git.yoctoproject.org/meta-mingw.git,morty,HEAD
 meta-java,git://git.yoctoproject.org/meta-java,morty,HEAD
 meta-mono,git://git.yoctoproject.org/meta-mono.git,morty,HEAD
