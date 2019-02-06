@@ -8,4 +8,4 @@ meta-mingw,git://git.yoctoproject.org/meta-mingw.git,morty,HEAD
 meta-java,git://git.yoctoproject.org/meta-java,morty,HEAD
 meta-mono,git://git.yoctoproject.org/meta-mono.git,morty,HEAD
 meta-ros,git://github.com/bmwcarit/meta-ros.git,master,c4314a1c13b8b63b38ffbd2f0232b945ba0663aa
-meta-trik,git://github.com/trikset/meta-trik.git,master,HEAD
+meta-trik,git://github.com/trikset/meta-trik.git,new_age,HEAD
