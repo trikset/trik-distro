@@ -3,43 +3,46 @@ First of all:
 or read this short README up to the end, at least...
 
 1. Long story short, to install build pre-requisites, run (for Debian/Ubuntu/Mint):
-	
-	```shell
-	$ sudo apt-get install python2.7-minimal gawk wget git-core diffstat unzip texinfo gcc-multilib \
+
+    ```shell
+    $ sudo apt-get install python2.7-minimal gawk wget git-core diffstat unzip texinfo gcc-multilib \
     build-essential chrpath libsdl1.2-dev util-linux coreutils parted libtool lzop
-  ```
+    ```
 
 1. To configure the scripts and download the build metadata, do:
 
-	```shell
-  $ ./oebb.sh config
-  ```
+    ```shell
+    $ ./oebb.sh config
+    ```
 
 1. If the previous step complains about dash/bash, please, do not ignore, otherwise it can result into problems with few packages. 
 
-  Now all config files and build scripts are present, and host is ready to start build. Rules for build are in 'sources' directory.
-  Main config is in  ./conf directory. For example, to build faster, change options in conf/local.conf:
+    Now all config files and build scripts are present, and host is ready to start build. Rules for build are in 'sources' directory.
+    Main config is in  ./conf directory. For example, to build faster, change options in conf/local.conf:
 
        PARALLEL_MAKE     = "-j5"
        BB_NUMBER_THREADS = "5"
 
-  The number in this option mainly depends on number of available CPU cores on host (build) machine. We recommend ${NUM_CORES}+1.
+    The number in this option mainly depends on number of available CPU cores on host (build) machine. We recommend ${NUM_CORES}+1.
 
 1. For the first build and any later from now on, please use `bash`. And every time set environment variables in the build shell:
-
-	```$ source ./build-environment-trik```
-
-  Do not forget to source environment config (`build-environment-trik`) each time before new build in fresh terminal session.
+  
+    ```$ source ./build-environment-trik```
+  
+    Do not forget to source environment config (`build-environment-trik`) each time before new build in fresh terminal session.
 
 1. Now environment is fully prepared to build any package. For example, use the following command to build Linux kernel
 
-	```$ bitbake virtual/kernel```
+    ```$ bitbake virtual/kernel```
 
-  It is strongly recommended to read short cheat-sheet on bitbake: http://elinux.org/Bitbake_Cheat_Sheet
+    It is strongly recommended to read short cheat-sheet on bitbake: http://elinux.org/Bitbake_Cheat_Sheet
 
 1. To build the whole image for microSD with core TRIK firmware, run this:
 
-```$ bitbake trik-image-core```
+    ```$ bitbake trik-image-core```
+
+
+# Report all problems to issues section for this repo
 
 -------
 
