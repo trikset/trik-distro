@@ -1,18 +1,22 @@
 First of all:
-
 	http://www.openembedded.org/wiki/Getting_started
+or read this short README up to the end, at least...
 
-Long story short, to install build pre-requisites, run (for Debian/Ubuntu/Mint):
+1. Long story short, to install build pre-requisites, run (for Debian/Ubuntu/Mint):
 	
-	$ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
+	```shell
+	$ sudo apt-get install python2.7-minimal gawk wget git-core diffstat unzip texinfo gcc-multilib \
     build-essential chrpath libsdl1.2-dev util-linux coreutils parted libtool lzop
+		```
 
 
-To configure the scripts and download the build metadata, do:
+1. To configure the scripts and download the build metadata, do:
 
 	$ ./oebb.sh config
 
-Now all config files and build scripts present and host is ready to start build. Rules for build are in 'sources' directory.
+1. If the previous step complains about dash/bash, please, do not ignore, otherwise it can result into problems with few packages. 
+
+Now all config files and build scripts are present, and host is ready to start build. Rules for build are in 'sources' directory.
 Main config is in  ./conf directory. For example, to build faster, change options in conf/local.conf:
 
        PARALLEL_MAKE     = "-j5"
@@ -20,27 +24,25 @@ Main config is in  ./conf directory. For example, to build faster, change option
 
 The number in this option mainly depends on number of available CPU cores on host (build) machine. We recommend ${NUM_CORES}+1.
 
-Set environment variables:
+1. For the first build and any later from now on, please use `bash`. And every time set environment variables in the build shell:
 
-	$ source ./build-environment-trik
+	```$ source ./build-environment-trik```
 
 Do not forget to source enviromnent config (build-environment-trik) each time before new build in fresh terminal session.
 
-Now environment is fully prepared to build any package. For example, use following command to build Linux kernel
+1. Now environment is fully prepared to build any package. For example, use the following command to build Linux kernel
 
-	$ bitbake virtual/kernel
+	```$ bitbake virtual/kernel```
 
 It is strongly recommended to read short cheat-sheet on bitbake: http://elinux.org/Bitbake_Cheat_Sheet
-Might be simple ui like 'goggle' is better than pure text interface 'knotty'.
-NOTE: 'goggle' graphical user interface is not recommended for remote and X-less session. 
 
-	$ alias bitbake='bitbake -u goggle'
+1. To build the whole image for microSD with core TRIK firmware, run this:
 
-To build the whole image for microSD with TRIK firmware, run this:
+```	$ bitbake trik-image-core```
 
-	$ bitbake trik-image
+-------
 
-To build the whole image for microSD with TRIK firmware with support additonal programming languages such as C#,F#(mono) and erlang, run this:
+To build the whole image for microSD with TRIK firmware with support additonal programming languages such as C#,F#(mono), and erlang, run this:
 
 	$ bitbake trik-image-langs
 
@@ -55,7 +57,7 @@ TODO: Why 'meta-'?
 
 After successful SDK build run it to install:
 
-	# bash deploy/eglibc/sdk/trik-sdk-i686-armv5te-toolchain-trik-nodistro.0.sh   
+	```# bash deploy/eglibc/sdk/trik-sdk-i686-armv5te-toolchain-trik-nodistro.0.sh```
 
 NOTE: Elevated privelegies are required to install, use 'sudo', 'su', etc.
 
