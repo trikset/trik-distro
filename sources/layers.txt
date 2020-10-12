@@ -6,6 +6,6 @@ meta-ti,git://git.yoctoproject.org/meta-ti,zeus,HEAD
 meta-qt5,git://github.com/meta-qt5/meta-qt5.git,zeus,HEAD
 #meta-mingw,git://git.yoctoproject.org/meta-mingw.git,zeus,HEAD
 meta-java,git://git.yoctoproject.org/meta-java,zeus,HEAD
-meta-mono,git://git.yoctoproject.org/meta-mono.git,master,HEAD
+meta-mono,git://git.yoctoproject.org/meta-mono.git,zeus,HEAD
 meta-ros,git://github.com/bmwcarit/meta-ros.git,zeus,HEAD
 meta-trik,git://github.com/trikset/meta-trik.git,new_age,HEAD
