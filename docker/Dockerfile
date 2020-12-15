@@ -11,7 +11,7 @@ RUN apt-get update && apt-get dist-upgrade -y \
             /usr/share/doc \
             /usr/share/man \
             /usr/share/locale/?? \
-            /usr/share/locale/??_?? \
+            /usr/share/locale/??_??
 
 RUN echo ---
 RUN locale-gen --purge en_US.UTF-8
