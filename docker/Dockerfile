@@ -5,6 +5,7 @@ RUN apt-get update && apt-get dist-upgrade -y \
 	&& apt-get install -y --no-install-recommends \
 		locales python3-pip gawk wget git-core diffstat unzip texinfo gcc-multilib \
     build-essential chrpath libsdl1.2-dev util-linux coreutils parted libtool lzop cpio \
+    screen tmux vim-tiny \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
             /var/cache/debconf/* \
@@ -15,7 +16,7 @@ RUN apt-get update && apt-get dist-upgrade -y \
 
 RUN echo ---
 RUN locale-gen --purge en_US.UTF-8
-RUN pip3 install -U pip && pip3 install -U setuptools wheel && pip3 install -U pytest-shutil
+RUN pip3 install -U 'pip < 21' && pip3 install -U setuptools wheel && pip3 install -U pytest-shutil
 
 RUN echo "dash dash/sh boolean false" | debconf-set-selections ; dpkg-reconfigure -f noninteractive dash || :
 ARG host_uid=1001
