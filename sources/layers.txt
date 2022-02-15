@@ -8,5 +8,5 @@ meta-qt5,git://github.com/meta-qt5/meta-qt5.git,dunfell,HEAD
 meta-java,git://git.yoctoproject.org/meta-java,dunfell,HEAD
 meta-mono,git://git.yoctoproject.org/meta-mono.git,dunfell,HEAD
 meta-ros,git://github.com/bmwcarit/meta-ros.git,dunfell,HEAD
-meta-tensorflow-lite,https://github.com/NobuoTsukamoto/meta-tensorflow-lite.git,master,HEAD
+meta-tensorflow-lite,https://github.com/NobuoTsukamoto/meta-tensorflow-lite.git,dunfell,HEAD
 meta-trik,git://github.com/trikset/meta-trik.git,new_age_dunfell,HEAD
