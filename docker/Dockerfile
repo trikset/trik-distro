@@ -5,7 +5,7 @@ RUN apt-get update && apt-get dist-upgrade -y \
 	&& apt-get install -y --no-install-recommends \
 		locales python3-pip gawk wget git-core diffstat unzip texinfo gcc-multilib \
     build-essential chrpath libsdl1.2-dev util-linux coreutils parted libtool lzop cpio \
-    screen tmux vim-tiny \
+    screen tmux vim-tiny python \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
             /var/cache/debconf/* \
