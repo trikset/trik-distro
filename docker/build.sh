@@ -1,8 +1,8 @@
 #!/bin/bash
 set -xueo pipefail
 pushd $(dirname $(realpath "$BASH_SOURCE"))
-docker build --build-arg "host_uid=$(id -u)" --build-arg "host_gid=$(id -g)"  -t oe-builder . 
-docker run -ti -v $PWD/..:/sandbox:rw -w /sandbox oe-builder bash -lc "\
+docker build --pull --network host --build-arg "host_uid=$(id -u)" --build-arg "host_gid=$(id -g)"  -t oe-builder .
+docker run -ti --network host -v $PWD/..:/sandbox:rw -w /sandbox oe-builder bash -lc "\
 set -xueo pipefail; \
 pwd; \
 [ ! -r build-environment-trik ] && ./oebb.sh config; source build-environment-trik; \
