@@ -2,11 +2,9 @@ bitbake,https://github.com/openembedded/bitbake.git,1.46,HEAD
 openembedded-core,https://github.com/openembedded/openembedded-core.git,dunfell,HEAD
 meta-openembedded,https://github.com/openembedded/meta-openembedded.git,dunfell,HEAD
 meta-arm,git://git.yoctoproject.org/meta-arm,dunfell,HEAD
-meta-python2,git://git.openembedded.org/meta-python2,dunfell,HEAD
 meta-ti,git://git.yoctoproject.org/meta-ti,dunfell,HEAD
 meta-qt5,https://github.com/meta-qt5/meta-qt5.git,dunfell,HEAD
 meta-java,git://git.yoctoproject.org/meta-java,dunfell,HEAD
 meta-mono,git://git.yoctoproject.org/meta-mono.git,dunfell,HEAD
-meta-ros,https://github.com/bmwcarit/meta-ros.git,dunfell,HEAD
 meta-tensorflow-lite,https://github.com/NobuoTsukamoto/meta-tensorflow-lite.git,dunfell,HEAD
 meta-trik,https://github.com/trikset/meta-trik.git,new_age_dunfell,HEAD
