@@ -34,7 +34,3 @@
 	path = sources/meta-trik
 	url = https://github.com/IgnatSergeev/meta-trik.git
 	branch = kirkstone
-[submodule "meta-python2"]
-	path = sources/meta-python2
-	url = git://git.openembedded.org/meta-python2
-	branch = kirkstone
