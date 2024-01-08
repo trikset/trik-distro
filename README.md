@@ -12,10 +12,11 @@ or read this short README up to the end, at least...
 1. To download build metadata, do:
 
     ```shell
+    git submodule update --init
     git clone --depth 1 -b kirkstone git://git.yoctoproject.org/poky
     ```
 
-    Now all config files and build scripts are present, and host is ready to start build. Rules for build are in 'sources' directory.
+    Now host is ready to start build. Rules for build are in 'sources' directory.
     Main config is in  ./conf directory. For example, to build faster, change options in conf/local.conf:
 
        PARALLEL_MAKE     = "-j5"
