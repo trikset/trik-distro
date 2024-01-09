@@ -42,22 +42,3 @@ or read this short README up to the end, at least...
 
 
 # Report all problems to issues section for this repo
-
--------
-
-To build the whole image for microSD with TRIK firmware with support additonal programming languages such as C#,F#(mono), and erlang, run this:
-
-	$ bitbake trik-image-langs
-
-The command above also builds lots of additional packages, but not all. The first build of the whole image can take 4-8 hours, be prepared.
-After build is complete image is ready in deploy/eglibc/images/trikboard/. Files with .trik-img extension are full microSD images.
-
-To build cross-compiler SDK:
-
-	$ bitbake meta-toolchain-trik
-
-After successful SDK build run it to install:
-
-	```# bash deploy/eglibc/sdk/trik-sdk-i686-armv5te-toolchain-trik-nodistro.0.sh```
-
-NOTE: Elevated privelegies are required to install, use 'sudo', 'su', etc.
