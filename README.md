@@ -1,19 +1,27 @@
+# Build firmware for the TRIK controller using the Yocto Project.
+
+To build the firmware, you need to clone this repository and pull all the submodules:
+
+```shell
+$ git submodule update --init
+```
+
 First of all:
-https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html
+https://docs.yoctoproject.org/4.0.19/brief-yoctoprojectqs/#
 or read this short README up to the end, at least...
 
-1. Long story short, to install build pre-requisites, run (for Debian/Ubuntu/Mint):
+1. To install build pre-requisites, run (for Debian/Ubuntu/Mint):
 
     ```shell
-    sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev python3-subunit mesa-common-dev zstd liblz4-tool file locales libacl1
-    sudo locale-gen en_US.UTF-8 
+    $ sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 python3-subunit zstd liblz4-tool file locales libacl1
+
+    $ sudo locale-gen en_US.UTF-8 
     ```
 
-1. To download build metadata, do:
+1. You need to clone the Poky repository to get all the necessary Yocto Project tools:
 
     ```shell
-    git submodule update --init
-    git clone --depth 1 -b kirkstone git://git.yoctoproject.org/poky
+    $ git clone --depth 1 -b kirkstone git://git.yoctoproject.org/poky
     ```
 
     Now host is ready to start build. Rules for build are in 'sources' directory.
@@ -40,5 +48,21 @@ or read this short README up to the end, at least...
 
     ```$ bitbake trik-image-core```
 
+## Build using a docker container.
+There is a script in the docker directory `build.sh` to automatically clone the poky repository and launch the docker container using `Dockerfile`, which will build the docker image and download all the necessary packages for development.
 
-# Report all problems to issues section for this repo
+This approach is suitable if you have an old or unsuitable operating system on host.
+
+You can run the build image for microSD with core TRIK firmware:
+
+```$ docker/build.sh```
+
+or you can launch the docker container terminal and run the build using bitbake:
+
+```shell
+$ docker/build.sh bash
+$ bitbake trik-image-core
+```
+
+
+# Report all problems to issues section for this repo.
