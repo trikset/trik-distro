@@ -1,23 +1,31 @@
+# Build firmware for the TRIK controller using the Yocto Project.
+
+To build the firmware, you need to clone this repository and pull all the submodules:
+
+```shell
+$ git submodule update --init
+$ git submodule update --remote
+```
+
 First of all:
-	http://www.openembedded.org/wiki/Getting_started
+https://docs.yoctoproject.org/4.0.19/brief-yoctoprojectqs/#
 or read this short README up to the end, at least...
 
-1. Long story short, to install build pre-requisites, run (for Debian/Ubuntu/Mint):
+1. To install build pre-requisites, run (for Debian/Ubuntu/Mint):
 
     ```shell
-    $ sudo apt-get install python2.7-minimal gawk wget git-core diffstat unzip texinfo gcc-multilib \
-    build-essential chrpath libsdl1.2-dev util-linux coreutils parted libtool lzop
+    $ sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 python3-subunit zstd liblz4-tool file locales libacl1
+
+    $ sudo locale-gen en_US.UTF-8 
     ```
 
-1. To configure the scripts and download the build metadata, do:
+1. You need to clone the Poky repository to get all the necessary Yocto Project tools:
 
     ```shell
-    $ ./oebb.sh config
+    $ git clone --depth 1 -b kirkstone git://git.yoctoproject.org/poky
     ```
 
-1. If the previous step complains about dash/bash, please, do not ignore, otherwise it can result into problems with few packages. 
-
-    Now all config files and build scripts are present, and host is ready to start build. Rules for build are in 'sources' directory.
+    Now host is ready to start build. Rules for build are in 'sources' directory.
     Main config is in  ./conf directory. For example, to build faster, change options in conf/local.conf:
 
        PARALLEL_MAKE     = "-j5"
@@ -27,9 +35,9 @@ or read this short README up to the end, at least...
 
 1. For the first build and any later from now on, please use `bash`. And every time set environment variables in the build shell:
   
-    ```$ source ./build-environment-trik```
+    ```$ source ./poky/oe-init-build-env .```
   
-    Do not forget to source environment config (`build-environment-trik`) each time before new build in fresh terminal session.
+    Do not forget to source environment config (`oe-init-build-env`) each time before new build in fresh terminal session.
 
 1. Now environment is fully prepared to build any package. For example, use the following command to build Linux kernel
 
@@ -41,52 +49,21 @@ or read this short README up to the end, at least...
 
     ```$ bitbake trik-image-core```
 
+## Build using a docker container.
+There is a script in the docker directory `build.sh` to automatically clone the poky repository and launch the docker container using `Dockerfile`, which will build the docker image and download all the necessary packages for development.
 
-# Report all problems to issues section for this repo
+This approach is suitable if you have an old or unsuitable operating system on host.
 
--------
+You can run the build image for microSD with core TRIK firmware:
 
-To build the whole image for microSD with TRIK firmware with support additonal programming languages such as C#,F#(mono), and erlang, run this:
+```$ docker/build.sh```
 
-	$ bitbake trik-image-langs
+or you can launch the docker container terminal and run the build using bitbake:
 
-The command above also builds lots of additional packages, but not all. The first build of the whole image can take 4-8 hours, be prepared.
-After build is complete image is ready in deploy/eglibc/images/trikboard/. Files with .trik-img extension are full microSD images.
-
-To build cross-compiler SDK:
-
-	$ bitbake meta-toolchain-trik
-
-TODO: Why 'meta-'?
-
-After successful SDK build run it to install:
-
-	```# bash deploy/eglibc/sdk/trik-sdk-i686-armv5te-toolchain-trik-nodistro.0.sh```
-
-NOTE: Elevated privelegies are required to install, use 'sudo', 'su', etc.
+```shell
+$ docker/build.sh bash
+$ bitbake trik-image-core
+```
 
 
-Additional useful things can be build by following names
-
-mono
-fsharp
-roslaunch
-
-TODO: Table of traditional packages' names mapping to reciepts' names to build. (inc JDK)
-TODO: Explain commands. 'Build' is main command, but `bitbake' knows a lot. See sources/openembedded-core/meta/conf/documentation.conf for details
-TODO: bitbake core-image-ros-roscore
-
-
-
-We work hard improving TRIK firmware, stay tuned and use 
-	$ git pull
-	$ ./oebb.sh update
-to get updates
-
-NOTE: The oebb.sh script tries hard to keep your local changes while at the same time keeping close to the original config. Please keep the following in mind:
-
-	* it will reset the origin URI based on layers.txt, so update layers.txt when changing a repo
-	* it will do a 'git reset --hard <ref>' on locked down repos, so please create a new branch for your changes
-
--------
-This script is based on Angstom setup-scripts
+# Report all problems to issues section for this repo.

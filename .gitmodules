@@ -1,0 +1,32 @@
+[submodule "meta-openembedded"]
+	path = sources/meta-openembedded
+	url = https://github.com/openembedded/meta-openembedded.git
+	branch = kirkstone
+[submodule "meta-arm"]
+	path = sources/meta-arm
+	url = git://git.yoctoproject.org/meta-arm
+	branch = kirkstone
+[submodule "meta-ti"]
+	path = sources/meta-ti
+	url = git://git.yoctoproject.org/meta-ti
+	branch = kirkstone
+[submodule "meta-qt5"]
+	path = sources/meta-qt5
+	url = https://github.com/meta-qt5/meta-qt5.git
+	branch = kirkstone
+[submodule "meta-java"]
+	path = sources/meta-java
+	url = git://git.yoctoproject.org/meta-java
+	branch = kirkstone
+[submodule "meta-mono"]
+	path = sources/meta-mono
+	url = git://git.yoctoproject.org/meta-mono.git
+	branch = kirkstone
+[submodule "meta-tensorflow-lite"]
+	path = sources/meta-tensorflow-lite
+	url = https://github.com/NobuoTsukamoto/meta-tensorflow-lite.git
+	branch = kirkstone
+[submodule "meta-trik"]
+	path = sources/meta-trik
+	url = https://github.com/trikset/meta-trik
+	branch = kirkstone
