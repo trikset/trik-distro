@@ -4,6 +4,7 @@ To build the firmware, you need to clone this repository and pull all the submod
 
 ```shell
 $ git submodule update --init
+$ git submodule update --remote
 ```
 
 First of all:
