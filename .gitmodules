@@ -30,3 +30,7 @@
 	path = sources/meta-trik
 	url = https://github.com/trikset/meta-trik
 	branch = kirkstone
+[submodule "poky"]
+	path = poky
+	url = git://git.yoctoproject.org/poky
+	branch = kirkstone
