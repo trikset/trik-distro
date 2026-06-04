@@ -4,11 +4,11 @@
 	branch = kirkstone
 [submodule "meta-arm"]
 	path = sources/meta-arm
-	url = git://git.yoctoproject.org/meta-arm
+	url = https://git.yoctoproject.org/meta-arm
 	branch = kirkstone
 [submodule "meta-ti"]
 	path = sources/meta-ti
-	url = git://git.yoctoproject.org/meta-ti
+	url = https://git.yoctoproject.org/meta-ti
 	branch = kirkstone
 [submodule "meta-qt5"]
 	path = sources/meta-qt5
@@ -16,11 +16,11 @@
 	branch = kirkstone
 [submodule "meta-java"]
 	path = sources/meta-java
-	url = git://git.yoctoproject.org/meta-java
+	url = https://git.yoctoproject.org/meta-java
 	branch = kirkstone
 [submodule "meta-mono"]
 	path = sources/meta-mono
-	url = git://git.yoctoproject.org/meta-mono.git
+	url = https://git.yoctoproject.org/meta-mono.git
 	branch = kirkstone
 [submodule "meta-tensorflow-lite"]
 	path = sources/meta-tensorflow-lite
@@ -32,5 +32,5 @@
 	branch = kirkstone
 [submodule "poky"]
 	path = poky
-	url = git://git.yoctoproject.org/poky
+	url = https://git.yoctoproject.org/poky
 	branch = kirkstone
