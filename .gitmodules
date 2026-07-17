@@ -34,3 +34,7 @@
 	path = poky
 	url = https://git.yoctoproject.org/poky
 	branch = kirkstone
+[submodule "meta-ros"]
+	path = sources/meta-ros
+	url = https://github.com/ros/meta-ros.git
+	branch = kirkstone
